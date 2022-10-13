@@ -1,0 +1,15 @@
+#Array
+	1.simple array
+	2.multi-dimensional array
+1.simple array
+	initilize as: 
+			int[] array = new int[size];
+			int []array = new int[size];
+			int array[] = new int[size];
+	it access by its index value
+	@array.length for getting its length
+2.multi-dimensional array
+	initilize as:
+			int array [][] = new int[size][size];
+
+int array[] = {1,2,3,4,5};

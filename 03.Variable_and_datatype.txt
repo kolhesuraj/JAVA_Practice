@@ -1,0 +1,24 @@
+# Variables
+	1.local variable
+		local variable initilize in function 
+		and which access is only in that function
+	2.global variable
+		it initilize globaly in class
+		it have initilize with static keyword to access in method or function
+# Datatype
+	1.int - integer data
+		int a = 0;
+			int a = sc.nextInt();
+			for user input
+	2.char - character data
+		char a = '+';
+			char mark = sca.next().charAt(0);
+			for user input
+			str.charAt(i)
+			for accessing perticular character
+	3.string - string data
+		String a = "abc";
+		String str=sc.nextLine();
+			for user input
+	4.float - float data
+		float a = 1.01;

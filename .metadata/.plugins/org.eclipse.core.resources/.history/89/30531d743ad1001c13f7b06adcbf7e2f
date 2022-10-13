@@ -1,0 +1,43 @@
+package demo;
+
+import java.sql.Date;
+
+import javax.swing.*;
+
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.UtilDateModel;
+
+import com.toedter.calendar.JCalendar;
+import com.toedter.calendar.JDateChooser;
+
+
+class ClockText extends JFrame {
+ 
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JTextField clockField; 
+    
+      public static <JDatePickerImpl> void main(String[] args) {
+        JFrame clock = new ClockText();
+        clock.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JDateChooser date = new JDateChooser();
+        clock.add(date);
+        clock.setLayout(null);
+        date.setDateFormatString("yyyy-MM-dd");
+        date.setSize(150,30);
+        date.setLocation(150,50);
+//        String gt = sdk.format(date.getDate());
+        UtilDateModel model = new UtilDateModel();
+        JDatePanelImpl datePanel = new JDatePanelImpl(model, null);
+        //JDatePickerImpl date1 = new JDatePickerImpl(datePanel);
+        Object selectedDate = ((JDatePanelImpl) date1).getModel().getValue();
+        String hg = ((JTextField) date.getDateEditor().getUiComponent()).getText(); 
+        
+        System.out.println(hg);
+        clock.setSize(720,720);
+        clock.setVisible(true);
+    }
+     
+}

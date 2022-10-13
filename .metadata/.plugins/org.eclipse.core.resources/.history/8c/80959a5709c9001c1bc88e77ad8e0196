@@ -1,0 +1,46 @@
+package demo;
+
+import java.awt.Color;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.swing.JLabel;
+
+public class Add {
+	 try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","Password");
+			try( Statement stmt = con.createStatement()){
+						float  fat = 3.0f;
+						float snf = 8.0f;
+						float rate = 32.0f;
+						for(int i = 0; i < 26; i++) {
+							snf = 8.0f;
+							float rate1 = rate;
+							for(int j = 0; j < 21; j++) {
+								String quary = "INSERT INTO `ratetable` (`fat`, `snf`, `rate`) VALUES ('"+fat+"',"+snf+ "',"+rate1+ "')" ;
+								stmt.executeUpdate(query);	
+								System.out.println("query run successfully");
+								snf = snf + 0.1f;
+								rate1 = rate1 + 0.2f;
+							}
+							fat = fat + 0.1f;
+							rate1 = rate+2;
+							rate = rate1;
+						}
+					}
+			}
+			
+			con.close();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+			System.out.println("sql fail");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+}

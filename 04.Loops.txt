@@ -1,0 +1,22 @@
+#loops
+	1.For
+	2.While
+	3.Do - While
+1. For
+	for(intilization ; condition ; increment/decremente){
+		code body;
+	}
+	it check condition and then run the loop
+
+2. While
+	while(condition){
+		code body;
+		increment/decrement;
+	}
+
+3.Do-While
+	do{
+		code body;
+		increment/decrement;
+	}while(condition);
+	it run code once then check condition;

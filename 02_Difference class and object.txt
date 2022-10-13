@@ -1,0 +1,32 @@
+# Class
+public class javanotes
+	- class is keyword to define class
+
+	public static void main(String[] args){
+	}
+		here:
+			public is access modifire
+	Access modifire:
+			1.public - give access to all function
+			2.private - it protect data and give access only in same class
+			3.protected- it protect from overlaping others
+		here:
+			static is says we call function without class object
+		here:
+			void for return data type 
+			-also use 1.int
+				  2.string
+				  3.array[String[] or int[]]
+				  4.bollen
+				  5.long
+				  6.char
+		here:
+			String[] args - it is argument pass to function
+
+
+# object
+javanotes object = new javanotes;
+	here:
+		object intilize as class_name object_name = new class_name;
+		object give access to function to call other function
+		new keyword initilize object;

@@ -1,0 +1,144 @@
+package Project;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Records implements ActionListener {
+
+	protected static JPanel record;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Records rd = new Records();
+		rd.record();
+	}
+	static JTextField id,Fat,cls,weight,rate;
+	public Component record() {
+		// TODO Auto-generated method stub
+		record = new JPanel();
+		record.setBounds(151,0,1370,120);
+		record.setLayout(null);
+		//record.setBackground(Color.blue);
+		int x = 250;
+		int y = 50;
+		
+
+		KeyListener listner = new KeyListener() {
+			public void keyPressed(KeyEvent listner) {
+				// TODO Auto-generated method stub
+				if(listner.getKeyChar() >= '0' && listner.getKeyChar() <= '9') {
+//					if(e.getSource() == id) {
+//						String iD = id.getText();
+//						System.out.println(iD+"  ");
+//						Details dt = new Details();
+//						dt.Detail(iD,rate);
+//						}
+//					
+				}else {
+					if(e.getSource() == id) {
+					id.setText(null);
+				}if(e.getSource() == Fat) {
+						Fat.setText(null);
+					}if(e.getSource() == cls) {
+						cls.setText(null);
+						
+					}if(e.getSource() == weight) {
+						weight.setText(null);
+					}
+				}
+				
+			}
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+	};
+
+		//
+		JLabel ID = new JLabel("ID");
+		ID.setBounds(x-100,y,70,30);
+		record.add(ID);
+	//
+		JTextField id = new JTextField();
+		id.setBounds(x-70,y+5,50,20);
+		id.addKeyListener(listner);
+		record.add(id);
+		
+		//
+		JLabel fat = new JLabel("Fat");
+		fat.setBounds(x , y ,70,30);
+		record.add(fat);
+		
+		//
+		JTextField Fat = new JTextField();
+		Fat.setBounds(x+25,y+5,50,20);
+		Fat.addKeyListener(listner);
+		record.add(Fat);
+		
+		//
+		JLabel snf = new JLabel("snf");
+		snf.setBounds(x+100,y,70,30);
+		record.add(snf);
+		
+		//
+		JTextField Snf = new JTextField();
+		Snf.setBounds(x+130,y+5,50,20);
+		Snf.addKeyListener(listner);
+		record.add(Snf);
+		
+		//
+		JLabel Weight = new JLabel("Weight");
+		Weight.setBounds(x+190,y,70,30);
+		record.add(Weight);
+		
+		//
+		JTextField weight = new JTextField();
+		weight.setBounds(x+250,y+5,50,20);
+		weight.addKeyListener(listner);
+		record.add(weight);
+		
+		JButton addRecord = new JButton("Add Record");
+		addRecord.setBounds(x+400, y, 130,30);
+		addRecord.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String ID = id.getText();
+				String FAT = Fat.getText();
+				String SNF = Snf.getText();
+				String WEIGHT = weight.getText();
+				//System.out.println(ID + ": " +FAT + " " + CLS + " " + WEIGHT);
+				AddRecords.main(ID , FAT,SNF, WEIGHT);
+				Records ht = new Records();
+				ht.getrecords();
+			}
+		});
+		record.add(addRecord);
+		
+		//
+		//
+		JFrame jFrame = new JFrame();
+		jFrame.setBounds(151,0,1370,1200);
+		jFrame.add(record);
+		jFrame.setLayout(null);
+		jFrame.setVisible(true);
+		//record.setVisible(true);
+		return record;
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+	}
+	protected void getrecords() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

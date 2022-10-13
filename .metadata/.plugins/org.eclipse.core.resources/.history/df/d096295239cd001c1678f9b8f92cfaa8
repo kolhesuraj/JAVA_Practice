@@ -1,0 +1,50 @@
+package Project;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.swing.JTextField;
+
+public class Details {
+
+
+	public static void main(String args) {
+		// TODO Auto-generated method stub
+	}
+
+	public void Detail(String iD, JTextField rate) {
+		// TODO Auto-generated method stub
+		System.out.println("hello");
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","Password");
+			 System.out.println("Connected successfully"); 
+			try( Statement stmt = con.createStatement()){
+				String query = "SELECT * FROM `farmer's_list` WHERE ID = '"+iD+"'";
+					ResultSet rs = stmt.executeQuery(query);	
+					System.out.println("query run successfully");
+					if(rs.next()) {
+						String iDgot = rs.getString("Id");
+						String Namegot = rs.getString("Name");
+						System.out.println( iDgot + " ");
+						System.out.println(Namegot + " ");
+						rate.setText(iDgot + "    "+ Namegot);
+					}
+			}
+			con.close();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+			System.out.println("sql fail");
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
+
+	
+
+}

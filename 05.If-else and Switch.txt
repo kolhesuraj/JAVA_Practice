@@ -1,0 +1,44 @@
+#If-else
+	1.If
+	2.If-else
+	3.IF-else if-else
+1.If
+	it is simple if statement 
+	it check condition and run code
+	if(condition){ code body;}
+
+2.If-else
+	it check condition and runs the code 
+	but condition is not true the runs else statment
+	if(condition){ 
+	code body;}
+	else{
+	code body;}
+
+3.If-else if- else
+	it check two contions twice 
+	1st in if and second in else if
+	if(condition){
+	code body;}
+	else if(condition){
+	code body;}
+	else{
+	code body;}
+
+#Switch 
+	it runs different block of code in basis of user input
+	it check case and then select code to run
+	@BREAK; use for break the statement or break the loop
+	$default for default input from user
+	switch(variable){
+		case 1: 
+			code;
+			break;
+
+		case 1: 
+			code;
+			break;
+		default: 
+			code;
+			break;
+		}

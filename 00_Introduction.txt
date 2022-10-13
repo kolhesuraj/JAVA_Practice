@@ -1,0 +1,11 @@
+JDK: JAVA DEVELOPMENT KIT
+JRE: JAVA RUNTIME ENVIRONMENT
+JVM: JAVA VIRTUAL MACHINE
+
+01.Feature
+02.Difference class and object
+03.Variable and Datatype
+04.loops
+05.If_else and Switch case
+06.Array
+07.Functions

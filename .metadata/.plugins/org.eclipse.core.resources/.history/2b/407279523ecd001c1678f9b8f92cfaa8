@@ -1,0 +1,102 @@
+package Project;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class ChangeRate {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void increaseRate(String value) {
+		// TODO Auto-generated method stub
+		 try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","Password");
+				try( Statement stmt = con.createStatement()){
+							float  fat = 3.0f;
+							float snf = 8.0f;
+							float rate = 33.0f;
+							for(int i = 0; i < 21; i++) {
+								snf = 8.0f;
+								float rate1 = rate;
+								for(int j = 0; j < 26; j++) {
+									//String snf1 = String.format("%.1f",snf);
+									String quary = "SELECT `rate`FROM `ratetable` WHERE format(snf,2) = format("+snf+" , 2) "
+											+ " AND format(fat,2) = format("+fat+" , 2) ";
+									ResultSet rs = stmt.executeQuery(quary);
+									System.out.println("query run successfully");
+									float value1 = Float.parseFloat(rs.getString(1));
+									float value2 = Float.parseFloat(value);
+									float value3 = value1+value2;
+									String query1 = "UPDATE `ratetable` SET `rate` = '" +value3+ "'WHERE format(snf,2) = format("+snf+" , 2) "
+											 +"AND format(fat,2) = format("+fat+" , 2) ";
+									stmt.executeUpdate(query1);
+									snf = snf + 0.1f;
+									rate1 = rate1 + 0.2f;
+								}
+								fat = fat + 0.1f;
+								rate1 = rate+0.2f;
+								rate = rate1;
+							}
+						}
+				con.close();
+		 }catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				System.out.println("sql fail");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	}
+
+	public void decreaseRate(String value) {
+		// TODO Auto-generated method stub
+		 try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","Password");
+				try( Statement stmt = con.createStatement()){
+							float  fat = 3.0f;
+							float snf = 8.0f;
+							float rate = 33.0f;
+							for(int i = 0; i < 21; i++) {
+								snf = 8.0f;
+								float rate1 = rate;
+								for(int j = 0; j < 26; j++) {
+									//String snf1 = String.format("%.1f",snf);
+									String quary = "SELECT `rate`FROM `ratetable` WHERE format(snf,2) = format("+snf+" , 2) "
+											+ " AND format(fat,2) = format("+fat+" , 2) ";
+									ResultSet rs = stmt.executeQuery(quary);
+									System.out.println("query run successfully");
+									float value1 = Float.parseFloat(rs.getString(1));
+									float value2 = Float.parseFloat(value);
+									value1 = value1 - value2;
+									String query1 = "UPDATE `ratetable` SET `rate` = '" +value1+ "'WHERE format(snf,2) = format("+snf+" , 2) "
+											 +"AND format(fat,2) = format("+fat+" , 2) ";
+									stmt.executeUpdate(query1);
+									snf = snf + 0.1f;
+									rate1 = rate1 + 0.2f;
+								}
+								fat = fat + 0.1f;
+								rate1 = rate+0.2f;
+								rate = rate1;
+							}
+						}
+				con.close();
+		 }catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				System.out.println("sql fail");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	}
+
+}
