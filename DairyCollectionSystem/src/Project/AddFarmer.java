@@ -168,7 +168,7 @@ import java.util.regex.Pattern;
 									System.out.println("query run successfully");
 									result.setText("record added successfully ");
 									String id1 = Details.getid(name0,mobile,email01);
-									result1.setText("Id: "+id1+"	farmers name: " + name0+"  mobile: " + mobile+"   email: " + email01);
+									result1.setText("Id: " +id1+  " 	farmers name: " + name0+ "  mobile: "  + mobile+"   email: " + email01);
 									name.setText(null);
 									mobile_no.setText(null);
 									email.setText(null);

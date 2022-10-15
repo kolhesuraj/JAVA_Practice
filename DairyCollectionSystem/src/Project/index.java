@@ -131,7 +131,7 @@ public class index extends JFrame implements ActionListener {
 				
 				con.close();
 			} catch (SQLException e1) {
-				text.setText("Please enter valid login details");
+				text.setText("Please check login details");
 				text.setForeground(Color.RED);
 				e1.printStackTrace();
 				System.out.println("sql fail");

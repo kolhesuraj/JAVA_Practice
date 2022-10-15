@@ -56,4 +56,5 @@
     <fullyQualifiedTypeName name="javax.mail.Transport"/>
     <fullyQualifiedTypeName name="javax.mail.Session"/>
     <fullyQualifiedTypeName name="java.net.PasswordAuthentication"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
 </qualifiedTypeNameHistroy>

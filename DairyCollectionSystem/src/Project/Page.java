@@ -4,7 +4,6 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException; 
 
 	public class Page extends JFrame implements ActionListener {
@@ -36,7 +35,8 @@ import java.io.IOException;
 			Label = new JPanel();
 				BufferedImage myPicture;
 				try {
-					myPicture = ImageIO.read(new File("C:\\Users\\suraj\\OneDrive\\Desktop\\Java\\DairyCollectionSystem\\src\\Project\\logo\\main-frame.png"));
+//					myPicture = ImageIO.read(new File("C:\\Users\\suraj\\OneDrive\\Desktop\\Java\\DairyCollectionSystem\\src\\Project\\logo\\main-frame.png"));
+					myPicture  = ImageIO.read(getClass().getResource("logo/main-frame.png"));
 					JLabel picLabel = new JLabel(new ImageIcon(myPicture));				
 					Label.add(picLabel);
 				} catch (IOException e1) {
@@ -48,8 +48,14 @@ import java.io.IOException;
 			Frame.add(Label);
 			
 			//
-			Icon icon = new ImageIcon("C:\\Users\\suraj\\OneDrive\\Desktop\\Java\\DairyCollectionSystem\\src\\Project\\logo\\add-record1.jpeg");
-			JButton Record = new JButton("new record", icon);
+//			Icon icon = new ImageIcon("C:\\Users\\suraj\\OneDrive\\Desktop\\Java\\DairyCollectionSystem\\src\\Project\\logo\\add-record1.jpeg");
+			  Image image = null;
+              try {
+                image = ImageIO.read(getClass().getResource("logo/add-record1.jpeg"));
+              } catch (IOException e) {
+                  e.printStackTrace();
+              }
+			JButton Record = new JButton("new record",new ImageIcon( image));
 			Record.setSize(100,100);
 			Record.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
@@ -65,8 +71,13 @@ import java.io.IOException;
 			buttonsPanel.add(Record);
 			
 			//
-			Icon icon1 = new ImageIcon("C:\\Users\\suraj\\OneDrive\\Desktop\\Java\\DairyCollectionSystem\\src\\Project\\logo\\addUser1.png");
-			JButton Farmers = new JButton("Add Framers", icon1);
+			Image icon2 = null;
+            try {
+              icon2 = ImageIO.read(getClass().getResource("logo/addUser1.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            JButton Farmers = new JButton("Add Framers", new ImageIcon(icon2));
 			Farmers.setSize(60,30);
 			Farmers.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
@@ -82,8 +93,13 @@ import java.io.IOException;
 			buttonsPanel.add(Farmers);
 			
 			//
-			Icon icon2 = new ImageIcon("C:\\Users\\suraj\\OneDrive\\Desktop\\Java\\DairyCollectionSystem\\src\\Project\\logo\\Bill1.png");
-			JButton bills = new JButton("bills", icon2);
+			Image icon3 = null;
+            try {
+              icon3 = ImageIO.read(getClass().getResource("logo/Bill1.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+			JButton bills = new JButton("bills", new ImageIcon(icon3));
 			bills.setSize(60,30);
 			bills.addActionListener(new ActionListener() 
 			{
@@ -100,8 +116,13 @@ import java.io.IOException;
 			buttonsPanel.add(bills);
 			
 			//
-			Icon icon3 = new ImageIcon("C:\\Users\\suraj\\OneDrive\\Desktop\\Java\\DairyCollectionSystem\\src\\Project\\logo\\table.png");
-			JButton rateTable = new JButton("rate Table",icon3);
+			Image icon4 = null;
+            try {
+              icon4 = ImageIO.read(getClass().getResource("logo/addUser1.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+			JButton rateTable = new JButton("rate Table",new ImageIcon(icon4));
 			rateTable.setSize(60,30);
 			buttonsPanel.add(rateTable);
 			rateTable.addActionListener(new ActionListener() 
